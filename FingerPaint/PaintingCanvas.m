@@ -9,6 +9,12 @@
 #import "PaintingCanvas.h"
 #import "Line.h"
 
+@interface PaintingCanvas ()
+
+@property CGPoint startingPoint;
+@property CGPoint endingPoint;
+
+@end
 
 @implementation PaintingCanvas
 
@@ -65,6 +71,12 @@
 //    }
 //    
     
+    /*
+     
+     // Working
+    
+    NSLog(@"View refreshed!");
+    
     UIBezierPath *path = [[UIBezierPath alloc] init];
 
     [path moveToPoint:(CGPoint){rect.origin.x, rect.origin.x}];
@@ -79,7 +91,65 @@
     
     [path stroke];
     
+     */
+    
+    NSLog(@"View refreshed!");
+    
+    
+    //self.startingPoint = (CGPoint){0, 0};
+    //self.endingPoint = (CGPoint){200, 200};
+    
+    NSLog(@"Starting Point (%f,%f)", self.startingPoint.x, self.startingPoint.y);
+    NSLog(@"Ending Point (%f,%f)", self.endingPoint.x, self.endingPoint.y);
+    
+    [self.path moveToPoint:self.startingPoint];
+    
+    [self.path addLineToPoint:self.endingPoint];
+    
+    [self.path setLineWidth:5.0];
+    
+    [[UIColor redColor] setStroke];
+    //[[UIColor colorWithRed:line.redRGB/255 green:line.greenRGB/255 blue:line.blueRGB/255 alpha:1] setStroke];
+    
+    //[path setLineJoinStyle:kCGLineJoinRound];
+    
+    [self.path stroke];
+    
+    self.startingPoint = self.endingPoint;
+    
 }
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        self.startingPoint = [touch locationInView:self];
+        self.path = [[UIBezierPath alloc] init];
+    }
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        self.endingPoint = [touch locationInView:self];
+        
+        
+        [self setNeedsDisplay];
+    }
+}
+
+//-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//    for (UITouch *touch in touches) {
+//        self.endingPoint = [touch locationInView:self];
+//        NSLog(@"Starting Point (%f,%f)", self.startingPoint.x, self.startingPoint.y);
+//        NSLog(@"Ending Point (%f,%f)", self.endingPoint.x, self.endingPoint.y);
+//    }
+//    
+//    //    CGRect r = CGRectMake(self.startingPoint.x,
+//    //                          self.startingPoint.y
+//    //                          );
+//    //
+//    //    [self.view setNeedsDisplayInRect:r];
+//    
+//    
+//}
 
 
 @end

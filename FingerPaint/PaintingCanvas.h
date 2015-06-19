@@ -11,5 +11,6 @@
 @interface PaintingCanvas : UIView
 
 @property (strong, nonatomic) NSMutableDictionary *lines;
+@property (nonatomic) UIBezierPath *path;
 
 @end
