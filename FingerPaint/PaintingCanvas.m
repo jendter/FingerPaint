@@ -17,37 +17,67 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     
-    Line *line1 = [[Line alloc] init];
+//    NSMutableArray *lines = [NSMutableArray new];
+//    
+//    
+//    Line *line1 = [[Line alloc] init];
+//    
+//    line1.startX = 0.0;
+//    line1.startY = 0.0;
+//    line1.endX = 50.0;
+//    line1.endY = 50.0;
+//    
+//    line1.redRGB = 30.0;
+//    line1.greenRGB = 50.0;
+//    line1.blueRGB = 100.0;
+//    
+//    [lines addObject:line1];
+//    
+//    Line *line2 = [[Line alloc] init];
+//    
+//    line2.startX = 50.0;
+//    line2.startY = 50.0;
+//    line2.endX = 100.0;
+//    line2.endY = 100.0;
+//    
+//    line2.redRGB = 0.0;
+//    line2.greenRGB = 150.0;
+//    line2.blueRGB = 100.0;
+//    
+//    [lines addObject:line2];
+//    
+//    
+//    
+//    for (Line *line in lines) {
+//        UIBezierPath *path = [[UIBezierPath alloc] init];
+//        
+//        [path moveToPoint:(CGPoint){line.startX, line.startY}];
+//        
+//        [path addLineToPoint:(CGPoint){line.endX, line.endY}];
+//        
+//        [path setLineWidth:5.0];
+//        
+//        [[UIColor colorWithRed:line.redRGB/255 green:line.greenRGB/255 blue:line.blueRGB/255 alpha:1] setStroke];
+//        
+//        [path setLineJoinStyle:kCGLineJoinRound];
+//        
+//        [path stroke];
+//    }
+//    
     
-    line1.startX = 0.0;
-    line1.startY = 0.0;
-    line1.endX = 50.0;
-    line1.endY = 50.0;
+    UIBezierPath *path = [[UIBezierPath alloc] init];
+
+    [path moveToPoint:(CGPoint){rect.origin.x, rect.origin.x}];
+
+    [path addLineToPoint:(CGPoint){rect.size.width, rect.size.height}];
+
+    [path setLineWidth:5.0];
+
+    //[[UIColor colorWithRed:line.redRGB/255 green:line.greenRGB/255 blue:line.blueRGB/255 alpha:1] setStroke];
+
+    [path setLineJoinStyle:kCGLineJoinRound];
     
-    line1.redRGB = 30.0;
-    line1.greenRGB = 50.0;
-    line1.blueRGB = 100.0;
-    
-    NSMutableArray *lines = [NSMutableArray new];
-    [lines addObject:line1];
-    
-    for (Line *line in lines) {
-        UIBezierPath *path = [[UIBezierPath alloc] init];
-        
-        [path moveToPoint:(CGPoint){line1.startX, line1.startY}];
-        
-        [path addLineToPoint:(CGPoint){line1.endX, line1.endY}];
-        
-        [path setLineWidth:5.0];
-        
-        [[UIColor colorWithRed:line1.redRGB/255 green:line1.greenRGB/255 blue:line1.blueRGB/255 alpha:1] setStroke];
-        
-        [path setLineJoinStyle:kCGLineJoinRound];
-        
-        [path stroke];
-    }
-    
-    
+    [path stroke];
     
 }
 
