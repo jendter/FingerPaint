@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Line : NSObject
 
@@ -15,8 +16,10 @@
 @property (nonatomic) float endX;
 @property (nonatomic) float endY;
 
-@property (nonatomic) float redRGB;
-@property (nonatomic) float greenRGB;
-@property (nonatomic) float blueRGB;
+//@property (nonatomic) float redRGB;
+//@property (nonatomic) float greenRGB;
+//@property (nonatomic) float blueRGB;
+
+@property (nonatomic, strong) UIColor *color;
 
 @end

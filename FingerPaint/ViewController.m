@@ -7,10 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "PaintingCanvas.h"
+#import "CanvasData.h"
 
 @interface ViewController ()
 
-
+@property CGPoint startingPoint;
+@property CGPoint endingPoint;
+@property PaintingCanvas *canvas;
+@property CanvasData *canvasData;
 
 @end
 
@@ -25,7 +30,16 @@
 //    panRecognizer.maximumNumberOfTouches = 1;
 //    [self.view addGestureRecognizer:panRecognizer];
     
+    //[self.view setDelegate:self];
     
+//    self.canvas = [[PaintingCanvas alloc] init];
+//    self.canvas.delegate = self;
+//    [self.view addSubview:self.canvas];
+    
+    PaintingCanvas *canvas = (PaintingCanvas *)self.view;
+    [canvas setDelegate:self];
+    
+    self.canvasData = [[CanvasData alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,7 +72,52 @@
 //    
 //}
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        self.startingPoint = [touch locationInView:self.view];
+        //if (self.path == nil){
+            // If there is a path, add it to the array of BezierPaths in the model
+            //NSLog(@"Empty path");
+        //}
+        
+        //self.path = [[UIBezierPath alloc] init];
+    }
+}
 
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        self.endingPoint = [touch locationInView:self.view];
+//        
+//        NSLog(@"Starting Point (%f,%f)", self.startingPoint.x, self.startingPoint.y);
+//        NSLog(@"Ending Point (%f,%f)", self.endingPoint.x, self.endingPoint.y);
+        
+//        [self.path moveToPoint:self.startingPoint]; // might not be needed
+//        
+//        [self.path addLineToPoint:self.endingPoint];
+//        
+//        [self.path setLineWidth:5.0];
+//        
+//        [[UIColor redColor] setStroke];
+//
+//        [self.view setNeedsDisplay];
+        
+        //[self.view set]
+        
+        //[self.canvas createNewLineWithStartingPoint:self.startingPoint endingPoint:self.endingPoint];
+        [self.view setNeedsDisplay];
+        
+        self.startingPoint = self.endingPoint;
+    }
+}
+
+-(NSUInteger)numberOfLines {
+    //NSNumber *numOfLines = [NSNumber numberWithInteger:self.canvasData.lines.count];
+    return self.canvasData.lines.count;
+}
+
+-(Line *)lineAtIndex:(NSUInteger)index {
+    return self.canvasData.lines[index];
+}
 
 
 @end

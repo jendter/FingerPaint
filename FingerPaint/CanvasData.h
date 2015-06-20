@@ -10,6 +10,6 @@
 
 @interface CanvasData : NSObject
 
-@property (nonatomic, strong) NSArray *lines;
+@property (nonatomic, strong) NSMutableArray *lines;
 
 @end

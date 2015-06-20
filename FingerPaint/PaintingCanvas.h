@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PaintingCanvasDataSource.h"
 
 @interface PaintingCanvas : UIView
 
-@property (strong, nonatomic) NSMutableDictionary *lines;
-@property (nonatomic) UIBezierPath *path;
+@property (nonatomic, assign) id<PaintingCanvasDataSource> delegate; // Make this an ID with a protocol
 
 @end

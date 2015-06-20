@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PaintingCanvasDataSource.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <PaintingCanvasDataSource>
 
 
 @end

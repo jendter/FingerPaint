@@ -49,6 +49,7 @@
 		27D78AFE1B34A3B30005551C /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		27D78B001B34BF7C0005551C /* CanvasData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasData.h; sourceTree = "<group>"; };
 		27D78B011B34BF7C0005551C /* CanvasData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasData.m; sourceTree = "<group>"; };
+		27D78B031B34CBD20005551C /* PaintingCanvasDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintingCanvasDataSource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +95,11 @@
 				27D78AD91B3499D20005551C /* AppDelegate.m */,
 				27D78ADB1B3499D20005551C /* ViewController.h */,
 				27D78ADC1B3499D20005551C /* ViewController.m */,
-				27D78B001B34BF7C0005551C /* CanvasData.h */,
-				27D78B011B34BF7C0005551C /* CanvasData.m */,
+				27D78B031B34CBD20005551C /* PaintingCanvasDataSource.h */,
 				27D78AFA1B349A4C0005551C /* PaintingCanvas.h */,
 				27D78AFB1B349A4C0005551C /* PaintingCanvas.m */,
+				27D78B001B34BF7C0005551C /* CanvasData.h */,
+				27D78B011B34BF7C0005551C /* CanvasData.m */,
 				27D78AFD1B34A3B30005551C /* Line.h */,
 				27D78AFE1B34A3B30005551C /* Line.m */,
 				27D78ADE1B3499D20005551C /* Main.storyboard */,
