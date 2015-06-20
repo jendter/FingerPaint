@@ -53,7 +53,7 @@
         
         line.start = self.startingPoint;
         line.end = self.endingPoint;
-        line.color = [UIColor redColor];
+        line.color = self.canvasData.currentColor;
         line.brushSize = 5.0;
         
         [self.canvasData.lines addObject:line];
@@ -125,5 +125,6 @@
     
     return [NSArray arrayWithArray:linesInRect];
 }
+
 
 @end

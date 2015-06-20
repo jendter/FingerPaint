@@ -17,6 +17,7 @@
 		27D78AFC1B349A4C0005551C /* PaintingCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D78AFB1B349A4C0005551C /* PaintingCanvas.m */; };
 		27D78AFF1B34A3B30005551C /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D78AFE1B34A3B30005551C /* Line.m */; };
 		27D78B021B34BF7C0005551C /* CanvasData.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D78B011B34BF7C0005551C /* CanvasData.m */; };
+		27D78B091B362BAE0005551C /* ColorOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D78B081B362BAE0005551C /* ColorOptionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		27D78B001B34BF7C0005551C /* CanvasData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasData.h; sourceTree = "<group>"; };
 		27D78B011B34BF7C0005551C /* CanvasData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasData.m; sourceTree = "<group>"; };
 		27D78B031B34CBD20005551C /* PaintingCanvasDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintingCanvasDataSource.h; sourceTree = "<group>"; };
+		27D78B071B362BAE0005551C /* ColorOptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorOptionView.h; sourceTree = "<group>"; };
+		27D78B081B362BAE0005551C /* ColorOptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorOptionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				27D78AFD1B34A3B30005551C /* Line.h */,
 				27D78AFE1B34A3B30005551C /* Line.m */,
 				27D78ADE1B3499D20005551C /* Main.storyboard */,
+				27D78B071B362BAE0005551C /* ColorOptionView.h */,
+				27D78B081B362BAE0005551C /* ColorOptionView.m */,
 				27D78AE11B3499D20005551C /* Images.xcassets */,
 				27D78AE31B3499D20005551C /* LaunchScreen.xib */,
 				27D78AD41B3499D20005551C /* Supporting Files */,
@@ -241,6 +246,7 @@
 				27D78AFC1B349A4C0005551C /* PaintingCanvas.m in Sources */,
 				27D78B021B34BF7C0005551C /* CanvasData.m in Sources */,
 				27D78ADA1B3499D20005551C /* AppDelegate.m in Sources */,
+				27D78B091B362BAE0005551C /* ColorOptionView.m in Sources */,
 				27D78AD71B3499D20005551C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +442,7 @@
 				27D78AF61B3499D20005551C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27D78AF71B3499D20005551C /* Build configuration list for PBXNativeTarget "FingerPaintTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +451,7 @@
 				27D78AF91B3499D20005551C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

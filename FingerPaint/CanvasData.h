@@ -6,10 +6,12 @@
 //  Copyright (c) 2015 Josh Endter. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 
 @interface CanvasData : NSObject
 
 @property (nonatomic, strong) NSMutableArray *lines;
+@property (nonatomic, strong) UIColor *currentColor;
 
 @end
