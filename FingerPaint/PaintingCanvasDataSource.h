@@ -13,9 +13,6 @@
 
 @protocol PaintingCanvasDataSource <NSObject>
 
-//- (UIBezierPath *) currentBezierPath;
-//-(NSNumber *)numberOfLinesInCanvas:(PaintingCanvas *)canvas;
-
 -(NSUInteger)numberOfLines;
 -(Line *)lineAtIndex:(NSUInteger)index;
 -(NSArray *)linesInRect:(CGRect)rect;
