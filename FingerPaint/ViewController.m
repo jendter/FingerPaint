@@ -134,5 +134,24 @@
     return self.canvasData.lines[index];
 }
 
+-(NSArray *)linesInRect:(CGRect)rect {
+    NSMutableArray *linesInRect = [NSMutableArray new];
+    
+    
+    for (Line *line in self.canvasData.lines) {
+        CGPoint lineStart = {line.startX, line.startY};
+        CGPoint lineEnd = {line.endX, line.endY};
+        
+        if (CGRectContainsPoint(rect, lineStart) || CGRectContainsPoint(rect, lineEnd) ) {
+            [linesInRect addObject:line];
+            NSLog(@"added line");
+        }
+        //[linesInRect addObject:line];
+    }
+    
+    
+    return [NSArray arrayWithArray:linesInRect];
+}
+
 
 @end

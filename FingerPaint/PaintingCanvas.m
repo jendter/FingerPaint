@@ -92,6 +92,20 @@
      
      // Working
     
+    //-(NSArray *)linesInRect:(CGRect)rect;
+    
+//    CGPoint origin = {0.0, 0.0};
+//    CGSize size = {100.0, 100.0};
+    
+    CGRect testRect = CGRectMake(0.0, 0.0, 100.0, 100.0);
+    
+    NSArray *linesInTestRect = [self.delegate linesInRect:testRect];
+    
+    NSLog(@"Lines in test rect: %@", linesInTestRect);
+    
+    
+    
+    
     NSLog(@"View refreshed!");
     
     
