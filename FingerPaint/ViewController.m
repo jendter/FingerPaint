@@ -126,5 +126,9 @@
     return [NSArray arrayWithArray:linesInRect];
 }
 
+- (IBAction)handleColorTap:(UITapGestureRecognizer *)recognizer {
+    self.canvasData.currentColor = recognizer.view.backgroundColor;
+}
+
 
 @end

@@ -20,61 +20,93 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eV0-p4-LaE" userLabel="Color Picker">
                                 <rect key="frame" x="0.0" y="411" width="320" height="157"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjM-az-7EA">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjM-az-7EA" customClass="ColorOptionView">
                                         <rect key="frame" x="248" y="85" width="72" height="72"/>
                                         <color key="backgroundColor" red="0.4823529412" green="0.4823529412" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pjM-az-7EA" secondAttribute="height" multiplier="1:1" id="scn-I2-VZg"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3Yl-Hx-2kb" appends="YES" id="kQR-96-wuS"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGJ-gN-ueW">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGJ-gN-ueW" customClass="ColorOptionView">
                                         <rect key="frame" x="166" y="85" width="72" height="72"/>
                                         <color key="backgroundColor" red="0.88235294119999996" green="0.1529411765" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="TGJ-gN-ueW" secondAttribute="height" multiplier="1:1" id="3ds-uA-Q2S"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="wxY-tO-gWw" appends="YES" id="pyg-eM-Nsc"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnD-bU-nLb">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnD-bU-nLb" customClass="ColorOptionView">
                                         <rect key="frame" x="0.0" y="85" width="72" height="72"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.37254901959999998" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pnD-bU-nLb" secondAttribute="height" multiplier="1:1" id="h6O-f5-XIZ"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="cQh-eB-jrz" appends="YES" id="hh7-w0-kzf"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nm2-TA-7XS">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nm2-TA-7XS" customClass="ColorOptionView">
                                         <rect key="frame" x="248" y="0.0" width="72" height="72"/>
                                         <color key="backgroundColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Nm2-TA-7XS" secondAttribute="height" multiplier="1:1" id="56P-Bx-4Qr"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="QuZ-dw-Jqm" appends="YES" id="s8E-4c-xl1"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QR7-EM-3V1">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QR7-EM-3V1" customClass="ColorOptionView">
                                         <rect key="frame" x="166" y="0.0" width="72" height="72"/>
                                         <color key="backgroundColor" red="0.92156862750000001" green="0.50588235290000005" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="QR7-EM-3V1" secondAttribute="height" multiplier="1:1" id="jik-oo-qYd"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="6li-mQ-SZf" appends="YES" id="6y9-F9-Dyt"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUo-3k-DtS">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUo-3k-DtS" customClass="ColorOptionView">
                                         <rect key="frame" x="83" y="0.0" width="72" height="72"/>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.76078431369999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="WUo-3k-DtS" secondAttribute="height" multiplier="1:1" id="7hJ-VI-7cr"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="qNr-Eg-rPZ" appends="YES" id="s2E-fS-iKw"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXq-97-XeV">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXq-97-XeV" customClass="ColorOptionView">
                                         <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
                                         <color key="backgroundColor" red="0.29803921570000003" green="0.73333333329999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lXq-97-XeV" secondAttribute="height" multiplier="1:1" id="SqO-ZA-G1H"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="eBd-6k-rxL" appends="YES" id="MEf-Lk-S2O"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3KJ-jR-MSV">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3KJ-jR-MSV" customClass="ColorOptionView">
                                         <rect key="frame" x="83" y="85" width="72" height="72"/>
                                         <color key="backgroundColor" red="0.38431372549999998" green="0.83921568629999999" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3KJ-jR-MSV" secondAttribute="height" multiplier="1:1" id="471-KQ-IcI"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="kZh-Gz-uzk" appends="YES" id="T17-XC-8xB"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -122,6 +154,46 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eBd-6k-rxL">
+                    <connections>
+                        <action selector="handleColorTap:" destination="vXZ-lx-hvc" id="Bg1-Fd-7vK"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="qNr-Eg-rPZ">
+                    <connections>
+                        <action selector="handleColorTap:" destination="vXZ-lx-hvc" id="Vmu-a6-LU1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6li-mQ-SZf">
+                    <connections>
+                        <action selector="handleColorTap:" destination="vXZ-lx-hvc" id="Emm-Iz-vSI"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="QuZ-dw-Jqm">
+                    <connections>
+                        <action selector="handleColorTap:" destination="vXZ-lx-hvc" id="klx-D6-dsQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="3Yl-Hx-2kb">
+                    <connections>
+                        <action selector="handleColorTap:" destination="vXZ-lx-hvc" id="nxT-qQ-gNY"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="wxY-tO-gWw">
+                    <connections>
+                        <action selector="handleColorTap:" destination="vXZ-lx-hvc" id="dg2-Dz-yNc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="kZh-Gz-uzk">
+                    <connections>
+                        <action selector="handleColorTap:" destination="vXZ-lx-hvc" id="qLB-Nx-3K6"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="cQh-eB-jrz">
+                    <connections>
+                        <action selector="handleColorTap:" destination="vXZ-lx-hvc" id="AIZ-aA-9a3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="168" y="366"/>
         </scene>
