@@ -97,16 +97,18 @@
 //    CGPoint origin = {0.0, 0.0};
 //    CGSize size = {100.0, 100.0};
     
-    CGRect testRect = CGRectMake(0.0, 0.0, 100.0, 100.0);
+    //CGRect testRect = CGRectMake(0.0, 0.0, 100.0, 100.0);
     
-    NSArray *linesInTestRect = [self.delegate linesInRect:testRect];
+//    NSArray *linesInTestRect = [self.delegate linesInRect:rect];
+//    
+//    NSLog(@"Lines in test rect: %@", linesInTestRect);
     
-    NSLog(@"Lines in test rect: %@", linesInTestRect);
+    NSLog(@"Rect origin: (%f, %f)", rect.origin.x, rect.origin.y  );
+    NSLog(@"Rect width: %f  height: %f)", rect.size.width, rect.size.height  );
     
     
     
-    
-    NSLog(@"View refreshed!");
+    //NSLog(@"View refreshed!");
     
     
     for (int counter = 0; counter < [self.delegate numberOfLines]; counter++) {
@@ -114,11 +116,11 @@
         
         Line *line = [self.delegate lineAtIndex:counter];
         
-        [path moveToPoint:(CGPoint){line.startX, line.startY}];
+        [path moveToPoint:line.start];
         
-        [path addLineToPoint:(CGPoint){line.endX, line.endY}];
+        [path addLineToPoint:line.end];
         
-        [path setLineWidth:5.0];
+        [path setLineWidth:line.brushSize];
         
         [line.color setStroke];
         
@@ -128,6 +130,46 @@
         
         
     }
+    
+//    NSArray *linesInRect = [self.delegate linesInRect:rect];
+//    
+//    for (int counter = 0; counter < linesInRect.count; counter++) {
+//        Line *line = linesInRect[counter];
+//        
+//        UIBezierPath *path = [[UIBezierPath alloc] init];
+//
+//
+//        [path moveToPoint:line.start];
+//
+//        [path addLineToPoint:line.end];
+//
+//        [path setLineWidth:5.0];
+//
+//        [line.color setStroke];
+//
+//        [path setLineJoinStyle:kCGLineJoinRound];
+//        
+//        [path stroke];
+    
+        
+//        UIBezierPath *path = [[UIBezierPath alloc] init];
+//
+//        
+//        [path moveToPoint:line.start];
+//        
+//        [path addLineToPoint:line.end];
+//        
+//        [path setLineWidth:5.0];
+//        
+//        [line.color setStroke];
+//        
+//        [path setLineJoinStyle:kCGLineJoinRound];
+//        
+//        [path stroke];
+        
+        
+        
+//    }
 
 //    [path moveToPoint:(CGPoint){rect.origin.x, rect.origin.x}];
 //

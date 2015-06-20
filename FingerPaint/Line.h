@@ -11,15 +11,18 @@
 
 @interface Line : NSObject
 
-@property (nonatomic) float startX;
-@property (nonatomic) float startY;
-@property (nonatomic) float endX;
-@property (nonatomic) float endY;
+//@property (nonatomic) float startX;
+//@property (nonatomic) float startY;
+//@property (nonatomic) float endX;
+//@property (nonatomic) float endY;
 
 //@property (nonatomic) float redRGB;
 //@property (nonatomic) float greenRGB;
 //@property (nonatomic) float blueRGB;
 
+@property (nonatomic) CGPoint start;
+@property (nonatomic) CGPoint end;
 @property (nonatomic, strong) UIColor *color;
+@property (nonatomic) float brushSize;
 
 @end

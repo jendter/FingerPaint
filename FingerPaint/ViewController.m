@@ -108,21 +108,76 @@
         
         Line *line = [[Line alloc] init];
         
-        line.startX = self.startingPoint.x;
-        line.startY = self.startingPoint.y;
-        line.endX = self.endingPoint.x;
-        line.endY = self.endingPoint.y;
-        
+        line.start = self.startingPoint;
+        line.end = self.endingPoint;
         line.color = [UIColor redColor];
+        line.brushSize = 5.0;
         
         [self.canvasData.lines addObject:line];
 
+        CGRect rectContainingAllLines = [self rectDrawingBoundsOfLine:line];
+
         
+        for (Line *otherLine in self.canvasData.lines) {
+            
+            if (CGRectContainsPoint(rectContainingAllLines, otherLine.start) ||
+                CGRectContainsPoint(rectContainingAllLines, otherLine.end)
+                ){
+                    CGRect rectContainingOtherLine = [self rectDrawingBoundsOfLine:otherLine];
+                
+                    rectContainingAllLines = CGRectUnion(rectContainingAllLines, rectContainingOtherLine);
+            }
+        }
         
-        [self.view setNeedsDisplay];
+        [self.view setNeedsDisplayInRect:rectContainingAllLines];
         
         self.startingPoint = self.endingPoint;
-    }
+        
+//        if (CGRectContainsPoint(rectContainingLine, otherLine.start) ||
+//            CGRectContainsPoint(rectContainingLine, otherLine.end)
+//            )
+//        {
+//            // X Values
+//            // min X
+//            if (otherLine.start.x < minX) {
+//                minX = otherLine.start.x;
+//            }
+//            if (otherLine.end.x < minX) {
+//                minX = otherLine.end.x;
+//            }
+//            // max X
+//            if (otherLine.start.x > maxX) {
+//                maxX = otherLine.start.x;
+//            }
+//            if (otherLine.end.x > maxX) {
+//                maxX = otherLine.end.x;
+//            }
+//            // Y Values
+//            // min Y
+//            if (otherLine.start.y < minY) {
+//                minY = otherLine.start.y;
+//            }
+//            if (otherLine.end.y < minY) {
+//                minY = otherLine.end.y;
+//            }
+//            // max Y
+//            if (otherLine.start.y > maxY) {
+//                maxY = otherLine.start.y;
+//            }
+//            if (otherLine.end.y > maxY) {
+//                maxY = otherLine.end.y;
+//            }
+//        }
+//        //[linesInRect addObject:line];
+//    }
+
+    
+//        float minX = CGRectGetMinX(rectContainingLine);
+//        float maxX = CGRectGetMaxX(rectContainingLine);
+//        float minY = CGRectGetMinY(rectContainingLine);
+//        float maxY = CGRectGetMaxY(rectContainingLine);
+    
+}
 }
 
 -(NSUInteger)numberOfLines {
@@ -139,12 +194,12 @@
     
     
     for (Line *line in self.canvasData.lines) {
-        CGPoint lineStart = {line.startX, line.startY};
-        CGPoint lineEnd = {line.endX, line.endY};
+        //CGPoint lineStart = {line.startX, line.startY};
+        //CGPoint lineEnd = {line.endX, line.endY};
         
-        if (CGRectContainsPoint(rect, lineStart) || CGRectContainsPoint(rect, lineEnd) ) {
+        if (CGRectContainsPoint(rect, line.start) || CGRectContainsPoint(rect, line.end) ) {
             [linesInRect addObject:line];
-            NSLog(@"added line");
+            //NSLog(@"added line");
         }
         //[linesInRect addObject:line];
     }
@@ -153,5 +208,28 @@
     return [NSArray arrayWithArray:linesInRect];
 }
 
+-(CGRect)rectDrawingBoundsOfLine:(Line *)line{
+
+    CGPoint upperLeftPoint;
+    CGPoint lowerRightPoint;
+    
+    upperLeftPoint = (CGPoint) {line.start.x - line.brushSize, line.start.y - line.brushSize};
+    lowerRightPoint = (CGPoint) {line.start.x + line.brushSize, line.start.y + line.brushSize};
+    CGRect rectContainingStartPoint = CGRectMake(MIN(upperLeftPoint.x, lowerRightPoint.x),
+                                                 MIN(upperLeftPoint.y, lowerRightPoint.y),
+                                                 fabs(upperLeftPoint.x - lowerRightPoint.x),
+                                                 fabs(upperLeftPoint.y - lowerRightPoint.y));
+    
+    upperLeftPoint = (CGPoint) {line.end.x - line.brushSize, line.end.y - line.brushSize};
+    lowerRightPoint = (CGPoint) {line.end.x + line.brushSize, line.end.y + line.brushSize};
+    CGRect rectContainingEndPoint = CGRectMake(MIN(upperLeftPoint.x, lowerRightPoint.x),
+                                               MIN(upperLeftPoint.y, lowerRightPoint.y),
+                                               fabs(upperLeftPoint.x - lowerRightPoint.x),
+                                               fabs(upperLeftPoint.y - lowerRightPoint.y));
+    
+    CGRect rectContainingStartAndEndPoints = CGRectUnion(rectContainingStartPoint, rectContainingEndPoint);
+    
+    return rectContainingStartAndEndPoints;
+}
 
 @end
