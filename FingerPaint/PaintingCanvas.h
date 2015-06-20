@@ -11,6 +11,6 @@
 
 @interface PaintingCanvas : UIView
 
-@property (nonatomic, assign) id<PaintingCanvasDataSource> delegate; // Make this an ID with a protocol
+@property (nonatomic, assign) id<PaintingCanvasDataSource> delegate;
 
 @end

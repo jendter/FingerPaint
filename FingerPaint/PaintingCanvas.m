@@ -34,9 +34,9 @@
 
     //[self.delegate numberOfLines];
     
-    NSLog(@"%lu", [self.delegate numberOfLines]);
+    //NSLog(@"%lu", [self.delegate numberOfLines]);
     
-    NSLog(@"Line at index 0: %@", [self.delegate lineAtIndex:0]);
+    //NSLog(@"Line at index 0: %@", [self.delegate lineAtIndex:0]);
     
     // Drawing code
     

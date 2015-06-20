@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "PaintingCanvas.h"
 #import "CanvasData.h"
+#import "Line.h"
 
 @interface ViewController ()
 
@@ -104,6 +105,20 @@
         //[self.view set]
         
         //[self.canvas createNewLineWithStartingPoint:self.startingPoint endingPoint:self.endingPoint];
+        
+        Line *line = [[Line alloc] init];
+        
+        line.startX = self.startingPoint.x;
+        line.startY = self.startingPoint.y;
+        line.endX = self.endingPoint.x;
+        line.endY = self.endingPoint.y;
+        
+        line.color = [UIColor redColor];
+        
+        [self.canvasData.lines addObject:line];
+
+        
+        
         [self.view setNeedsDisplay];
         
         self.startingPoint = self.endingPoint;
