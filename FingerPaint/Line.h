@@ -15,5 +15,6 @@
 @property (nonatomic) CGPoint end;
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic) float brushSize;
+@property (nonatomic) BOOL isNewLine;
 
 @end

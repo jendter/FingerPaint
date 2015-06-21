@@ -15,6 +15,7 @@
 
 @property CGPoint startingPoint;
 @property CGPoint endingPoint;
+@property BOOL isNewLine;
 @property PaintingCanvas *canvas;
 @property CanvasData *canvasData;
 
@@ -42,6 +43,7 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     for (UITouch *touch in touches) {
         self.startingPoint = [touch locationInView:self.view];
+        self.isNewLine = YES;
     }
 }
 
@@ -55,6 +57,9 @@
         line.end = self.endingPoint;
         line.color = self.canvasData.currentColor;
         line.brushSize = 5.0;
+        if(self.isNewLine) {
+            line.isNewLine = YES;
+        }
         
         [self.canvasData.lines addObject:line];
 
@@ -75,6 +80,7 @@
         [self.view setNeedsDisplayInRect:rectContainingAllLines];
         
         self.startingPoint = self.endingPoint;
+        self.isNewLine = NO;
     
     }
 }
@@ -117,8 +123,22 @@
 -(NSArray *)linesInRect:(CGRect)rect {
     NSMutableArray *linesInRect = [NSMutableArray new];
     
+    CGRect rectContainingAllLines = rect;
+    
+    
+    for (Line *otherLine in self.canvasData.lines) {
+        
+        if (CGRectContainsPoint(rectContainingAllLines, otherLine.start) ||
+            CGRectContainsPoint(rectContainingAllLines, otherLine.end)
+            ){
+            CGRect rectContainingOtherLine = [self rectDrawingBoundsOfLine:otherLine];
+            
+            rectContainingAllLines = CGRectUnion(rectContainingAllLines, rectContainingOtherLine);
+        }
+    }
+    
     for (Line *line in self.canvasData.lines) {
-        if (CGRectContainsPoint(rect, line.start) || CGRectContainsPoint(rect, line.end) ) {
+        if (CGRectContainsPoint(rectContainingAllLines, line.start) || CGRectContainsPoint(rectContainingAllLines, line.end) ) {
             [linesInRect addObject:line];
         }
     }

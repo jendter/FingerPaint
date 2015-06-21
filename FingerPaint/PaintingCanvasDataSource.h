@@ -16,5 +16,6 @@
 -(NSUInteger)numberOfLines;
 -(Line *)lineAtIndex:(NSUInteger)index;
 -(NSArray *)linesInRect:(CGRect)rect;
+//-(CGRect)rectDrawingBoundsOfLine:(Line *)line;
 
 @end

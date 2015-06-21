@@ -10,4 +10,13 @@
 
 @implementation Line
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _isNewLine = NO;
+    }
+    return self;
+}
+
 @end

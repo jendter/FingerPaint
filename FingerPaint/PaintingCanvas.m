@@ -30,11 +30,25 @@
     for (int counter = 0; counter < [self.delegate numberOfLines]; counter++) {
         UIBezierPath *path = [[UIBezierPath alloc] init];
         
+        // Get the line and previous line
         Line *line = [self.delegate lineAtIndex:counter];
+        Line *previousLine;
+        if (counter > 0) {
+            previousLine = [self.delegate lineAtIndex:counter-1];
+        } else {
+            previousLine = [self.delegate lineAtIndex:counter];
+        }
         
-        [path moveToPoint:line.start];
+        if (!line.isNewLine) {
+            // Make it smoother by adding the previous line endpoint as the new line's start point
+            [path moveToPoint:previousLine.start];
+            [path addLineToPoint:line.start];
+            [path addLineToPoint:line.end];
+        } else {
+            [path moveToPoint:line.start];
+            [path addLineToPoint:line.end];
+        }
         
-        [path addLineToPoint:line.end];
         
         [path setLineWidth:line.brushSize];
         
